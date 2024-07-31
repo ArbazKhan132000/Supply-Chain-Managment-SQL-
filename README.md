@@ -1,5 +1,18 @@
 # Supply Chain Management SQL Project
 
+##Overview
+This project analyzes supply chain data using SQL to extract insights related to order lines, orders, and delivery performance. Key performance indicators (KPIs) such as Volume Fill Rate (VOFR), On Time Delivery, and In Full Delivery are calculated and presented by city. Additional analysis includes customer orders, product demand, and city performance.
+
+##Database Schema
+The analysis uses the following tables:
+###dim_customers : This table contains all the information about customers.
+###dim_products.csv: This table contains all the information about products.
+###dim_date : This table contains the dates at daily, monthly level and week numbers of the year.
+###dim_targets_orders : This table contains all target data at the customer level.
+###fact_order_lines : This table contains all information about orders and each item inside the orders.
+###fact_orders_aggregate : This table contains information about OnTime, InFull and OnTime Infull information aggregated at the order level per customer.
+
+
 ## Project Insights
 
 - **Total Number of Order Lines:**
@@ -23,10 +36,12 @@
 -- 1. Total Number of Order Lines
 SELECT count(order_id) AS `Total Numbers Order Lines`
 FROM fact_order_lines;
+```
 
 -- 2. Total Number of Orders
 SELECT count(distinct(order_id)) AS `Total Numbers of Order`
 FROM fact_order_lines;
+```
 
 -- 3. Volume Fill Rate (VOFR %) by City
 SELECT City,
@@ -38,6 +53,7 @@ INNER JOIN dim_customers AS C
     ON O.customer_id=C.customer_id
 GROUP BY City
 ORDER BY `VOFR %`;
+```
 
 -- 4. On-Time Delivery % by City
 SELECT City,
@@ -48,6 +64,7 @@ INNER JOIN dim_customers AS C
     ON O.customer_id=C.customer_id
 GROUP BY City
 ORDER BY `On Time Delivery %`;
+```
 
 -- 5. In-Full Delivery % by City
 SELECT City,
@@ -58,6 +75,7 @@ INNER JOIN dim_customers AS C
     ON O.customer_id=C.customer_id
 GROUP BY City
 ORDER BY `In Full Delivery %`;
+```
 
 -- 6. On-Time In-Full Delivery % by City
 SELECT City,
@@ -68,6 +86,7 @@ INNER JOIN dim_customers AS C
     ON O.customer_id=C.customer_id
 GROUP BY City
 ORDER BY `OTIF Delivery %`;
+```
 
 -- 7. Comparison of Delivery Metrics by City
 SELECT City,
@@ -79,25 +98,41 @@ INNER JOIN dim_customers AS C
     ON O.customer_id=C.customer_id
 GROUP BY City
 ORDER BY `OTIF Delivery %` DESC;
+```
 
+##Recommendation :
+Improve VOFR:
 
-## Solutions and Recommendations
+Focus on Cities with Low VOFR: Identify cities with lower VOFR percentages and investigate the causes, such as supply chain disruptions or logistical inefficiencies.
+Optimize Inventory Management: Ensure that inventory levels align with demand forecasts to improve order fulfillment rates.
+Enhance On-Time Delivery:
 
-- **Optimize Delivery Processes:**
-  Focus on improving Volume Fill Rate (VOFR %) and On-Time In-Full (OTIF) delivery metrics, particularly in cities with lower performance. Analyze and address factors causing delays and inefficiencies in the delivery process.
+Address Delivery Delays: Analyze the reasons behind delivery delays in cities with low On Time Delivery percentages. Implement corrective measures such as better route planning or improving supplier performance.
+Improve Logistics Coordination: Strengthen coordination with logistics partners to ensure timely deliveries.
+Increase In-Full Deliveries:
 
-- **Enhance On-Time Delivery:**
-  Address delays in the supply chain to increase the percentage of on-time deliveries. Implement measures to streamline operations and ensure timely order fulfillment.
+Review Order Fulfillment Processes: Investigate issues causing incomplete orders and refine fulfillment processes to ensure that all ordered items are delivered.
+Implement Better Tracking Systems: Use tracking systems to monitor the status of orders and identify any issues early in the fulfillment process.
+Boost OTIF Performance:
 
-- **Improve In-Full Deliveries:**
-  Ensure order accuracy and full fulfillment to boost the percentage of deliveries made in full. Review and refine processes to minimize partial deliveries and order discrepancies.
+Integrate On-Time and In-Full Strategies: Combine efforts to improve both on-time and in-full delivery metrics for a comprehensive approach to OTIF performance.
+Regularly Monitor and Adjust: Continuously monitor OTIF performance and adjust strategies based on real-time data and feedback.
+Customer and Product Analysis:
 
-- **Benchmark City Performance:**
-  Utilize insights from city-based performance comparisons to identify best practices and implement them across the supply chain. Focus on replicating successful strategies in cities with lower performance metrics.
+Target High-Value Customers: Focus on high-value customers who place the most orders and ensure their needs are met efficiently.
+Stock In-Demand Products: Ensure that the most in-demand products are always in stock to meet customer demands and avoid lost sales.
+City-Specific Strategies:
+
+Tailor Strategies by City: Implement city-specific strategies based on the performance metrics and characteristics of each city. Customize inventory and delivery strategies to suit local conditions.
 
 ## Conclusion
+This project provides valuable insights into supply chain performance metrics by city, supporting data-driven decision-making. The SQL queries are crafted to efficiently extract and analyze key metrics, aiding in the optimization and management of the supply chain.
 
-The analysis reveals significant insights into the performance of supply chain operations. Addressing identified issues and implementing the recommended solutions will be crucial for enhancing overall supply chain efficiency.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Contact
+For any questions or feedback, please contact [your email address].overall supply chain efficiency.
 
 ## Files Included
 
