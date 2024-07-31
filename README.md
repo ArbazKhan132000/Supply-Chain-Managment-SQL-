@@ -79,3 +79,32 @@ INNER JOIN dim_customers AS C
     ON O.customer_id=C.customer_id
 GROUP BY City
 ORDER BY `OTIF Delivery %` DESC;
+
+
+## Solutions and Recommendations
+
+- **Optimize Delivery Processes:**
+  Focus on improving Volume Fill Rate (VOFR %) and On-Time In-Full (OTIF) delivery metrics, particularly in cities with lower performance. Analyze and address factors causing delays and inefficiencies in the delivery process.
+
+- **Enhance On-Time Delivery:**
+  Address delays in the supply chain to increase the percentage of on-time deliveries. Implement measures to streamline operations and ensure timely order fulfillment.
+
+- **Improve In-Full Deliveries:**
+  Ensure order accuracy and full fulfillment to boost the percentage of deliveries made in full. Review and refine processes to minimize partial deliveries and order discrepancies.
+
+- **Benchmark City Performance:**
+  Utilize insights from city-based performance comparisons to identify best practices and implement them across the supply chain. Focus on replicating successful strategies in cities with lower performance metrics.
+
+## Conclusion
+
+The analysis reveals significant insights into the performance of supply chain operations. Addressing identified issues and implementing the recommended solutions will be crucial for enhancing overall supply chain efficiency.
+
+## Files Included
+
+- `supply_chain_analysis.sql`: SQL script containing the queries used for analysis.
+- `README.md`: Project description and documentation.
+
+## License
+
+This project is licensed under the MIT License.
+
