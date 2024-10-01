@@ -156,4 +156,4 @@ For any questions or feedback, please contact [your email address].
 ## Files Included
 
 - `supply_chain_analysis.sql`: SQL script containing the queries used for analysis.
-- `README.md`: Project description and documentation.
+- `README.md`: Project description and documentation
