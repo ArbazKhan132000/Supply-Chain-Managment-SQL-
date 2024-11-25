@@ -149,11 +149,8 @@ This project provides valuable insights into supply chain performance metrics by
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
-
-For any questions or feedback, please contact [your email address].
-
 ## Files Included
 
-- `supply_chain_analysis.sql`: SQL script containing the queries used for analysis.
-- `README.md`: Project description and documentation
+- [DDL and DML Script.sql](https://github.com/ArbazKhan132000/Supply-Chain-Managment-SQL-/blob/main/SQL%20Scripts/DDL%20and%20DML%20Script.sql)
+- [Customer, Products, City Analysis.sql](https://github.com/ArbazKhan132000/Supply-Chain-Managment-SQL-/blob/main/SQL%20Scripts/Customer%2C%20Products%2C%20City%20Analysis.sql)
+- [SCM Performance Metrics.sql](https://github.com/ArbazKhan132000/Supply-Chain-Managment-SQL-/blob/main/SQL%20Scripts/SCM%20Performance%20Metrics.sql)
